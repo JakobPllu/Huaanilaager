@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+	head
+		title Chat
+	body
+		h1 Chat
+
+		each message in messages
+			div
+				div= message.date
+				div= message.author
+				div= message.message
+
+		hr
+		form(method='POST')
+			div
+				label(for='author') Nimi:
+				input#author(type='text', name='author', value= '', placeholder='sisesta nimi')
+			div
+				label(for='message') Sõnum:
+				textarea#message(name='message', placeholder='siia kirjuta sõnum')
+			div
+				button(type='submit') Saada sõnum
+				button(type='reset') Tühista

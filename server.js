@@ -12,13 +12,14 @@ app.set('view engine', 'jade')
 app.set('views', path.join(__dirname, 'views'))
 
 
-// Parse pasted from data
+// Parse form data
 app.use(bodyParser.urlencoded({ extended: true}))
 
 
 // Show chat messages list and form
 app.get('/', function (req, res) {
 	var data = {
+        pageTitle: 'Chätt',
 		messages: messages,
 	}
 	res.render('index', data)

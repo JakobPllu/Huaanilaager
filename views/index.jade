@@ -1,24 +1,55 @@
 doctype html
 html(lang="en")
-	head
-		title Chat
-	body
-		h1 Chat
+    head
+        title Chat
 
-		each message in messages
-			div
-				div= message.date
-				div= message.author
-				div= message.message
+        style(type='text/css').
+            body {
+                background-image: http://g2.nh.ee/images/pix/900x585/mSSLQg9cz-8/file64358797_238b94c8.jpg
+                font-family: 'Helvetica Neue';
+                margin: 50px;
+                font-size: 12px;
+                font-weight: 100;
+            }
+            .message {
+                margin: 20px 0px;
+            }
 
-		hr
-		form(method='POST')
-			div
-				label(for='author') Nimi:
-				input#author(type='text', name='author', value= '', placeholder='sisesta nimi')
-			div
-				label(for='message') Sõnum:
-				textarea#message(name='message', placeholder='siia kirjuta sõnum')
-			div
-				button(type='submit') Saada sõnum
-				button(type='reset') Tühista
+            form {
+                padding: 10px;
+                background-color: #dedede;
+            }
+
+            label {
+                display: block;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            input, textarea {
+                border: 2px dashed red;
+                margin: 0px 0px 10px 0px;
+                padding: 5px 10px;
+                font-size: 12px;
+            }
+
+
+    body
+        h1 Chat
+
+        each message in messages
+            div.message
+                div= message.date
+                div= message.author
+                div= message.message
+
+        form(method='POST')
+            div
+                label(for='author') Nimi
+                input#author(type='text', name='author', value= '', placeholder='sisesta nimi')
+            div
+                label(for='message') Sõnum
+                textarea#message(name='message', placeholder='siia kirjuta sõnum')
+            div
+                button(type='submit') Saada sõnum
+                button(type='reset') Tühista

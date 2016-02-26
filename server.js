@@ -39,7 +39,7 @@ app.post('/', function (req, res)  {
 })
 
 
-// Start server to listen port 4000
-app.listen(4000, function() {
-	console.log('Server started at port 4000')
+// Start server
+app.listen(process.env.PORT, process.env.IP, function() {
+	console.log('Server started at ' + process.env.IP + ':' + process.env.PORT)
 })

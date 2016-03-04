@@ -1,0 +1,27 @@
+body {
+    font-family: 'Helvetica Neue';
+    margin: 50px;
+    font-size: 12px;
+    font-weight: 100;
+}
+.message {
+    margin: 20px 0px;
+}
+
+form {
+    padding: 10px;
+    background-color: #dedede;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+input, textarea {
+    border: 0px;
+    margin: 0px 0px 10px 0px;
+    padding: 5px 10px;
+    font-size: 12px;
+}

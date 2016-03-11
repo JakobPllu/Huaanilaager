@@ -16,6 +16,10 @@ app.set('views', path.join(__dirname, 'views'))
 app.use(bodyParser.urlencoded({ extended: true}))
 
 
+//Serve static files
+app.use('/static', express.static(path.join(__dirname, 'public')))
+
+
 // Show chat messages list and form
 app.get('/', function (req, res) {
 	var data = {

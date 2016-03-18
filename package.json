@@ -1,5 +1,6 @@
 {
   "name": "12b-test",
+  "author": "Argo Roots",
   "version": "1.0.0",
   "main": "server.js",
   "public": false,

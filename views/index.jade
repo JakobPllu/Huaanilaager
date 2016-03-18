@@ -16,13 +16,34 @@ html(lang="en")
                 div= message.author
                 div= message.message
 
-        form#message-form(method='POST')
-            div
+        form#message-form
+
+            #author-field
                 label(for='author') Nimi
                 input#author(type='text', name='author', value= '', placeholder='sisesta nimi')
-            div
+
+            #message-field
                 label(for='message') Sõnum
                 textarea#message(name='message', placeholder='siia kirjuta sõnum')
-            div
-                button(type='submit') Saada sõnum
-                button(type='reset') Tühista
+
+            #login-button
+                button Sisene
+
+            #submit-button
+                button Saada sõnum
+
+
+        script.
+
+            if(sessionStorage.getItem('userName')) {
+
+                $('#author-field').hide()
+                $('#login-button').hide()
+
+            } else {
+
+                $('#message-field').hide()
+                $('#submit-button').hide()
+                
+            }
+

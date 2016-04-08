@@ -27,10 +27,10 @@ html(lang="en")
                 textarea#message(name='message', placeholder='siia kirjuta sõnum')
 
             #login-button
-                button Sisene
+                button#login Sisene
 
             #submit-button
-                button Saada sõnum
+                button#submit Saada sõnum
 
 
         script.
@@ -44,6 +44,38 @@ html(lang="en")
 
                 $('#message-field').hide()
                 $('#submit-button').hide()
-                
+
             }
+
+            $('#login').click(function() {
+
+                event.preventDefault()
+
+                sessionStorage.setItem('userName', $('#author').val())
+
+                $('#author-field').hide()
+                $('#login-button').hide()
+                $('#message-field').show()
+                $('#submit-button').show()
+
+            })
+
+            $('#submit').click(function() {
+
+                event.preventDefault()
+
+                var message = {
+                    author: $('#author').val(),
+                    message: $('#message').val(),
+                }
+
+                $.post('/', message, function(data) {
+
+                    $('#message').val('')
+                    $('#message').focus()
+
+                })
+
+            })
+
 
